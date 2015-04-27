@@ -94,7 +94,9 @@ io.sockets.on('connection', function (socket) {
  });
 
  socket.on("video", function(data){
-
+	console.log('----VIDEO----');
+	console.log(data);
+	console.log('----LOG----');
     if( data.action === "play"){
     var id = data.video_id,
          url = "http://www.youtube.com/watch?v="+id;
@@ -107,7 +109,8 @@ io.sockets.on('connection', function (socket) {
          },
         function () {
             //child = spawn('omxplayer',[id+'.mp4']);
-            omx.quit();
+            console.log(omx);
+	    omx.quit();
 	    omx.start('./videos/' +id+ '.mp4');
         });
     }

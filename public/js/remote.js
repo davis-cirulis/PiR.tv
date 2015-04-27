@@ -55,7 +55,7 @@ $$(".r-container").swipeRight(function(){
 });
 $$(".r-header").tap(function(){
 	socket.emit('controll',{action:"tap"}); 
-	$(".app-body").fadeToggle("fast", function () {});	
+	//$(".app-body").fadeToggle("fast", function () {});	
 	$.get(host+'/omx/quit',function(data){
 		console.log(data);
 	});
